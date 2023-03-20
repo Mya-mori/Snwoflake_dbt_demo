@@ -1,0 +1,45 @@
+
+
+============================== 2023-03-20 00:49:12.587299 | a432c1e4-cafc-499a-8a14-3bd5cbfa5f33 ==============================
+[0m00:49:12.587299 [info ] [MainThread]: Running with dbt=1.4.5
+[0m00:49:12.592300 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ISLAHARATO\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': 'dbt_demo', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m00:49:12.593299 [debug] [MainThread]: Tracking: tracking
+[0m00:49:12.716296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0967F3220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0967F3250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0967F2800>]}
+[0m00:49:12.718296 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\ISLAHARATO\.dbt
+[0m00:49:12.724298 [debug] [MainThread]: Starter project path: C:\repositories\ISL\Snwoflake_dbt_demo\.venv\lib\site-packages\dbt\include\starter_project
+[0m00:50:51.999513 [info ] [MainThread]: Profile dbt_demo written to C:\Users\ISLAHARATO\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m00:50:52.001515 [info ] [MainThread]: 
+Your new dbt project "dbt_demo" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:50:52.005518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0967F2290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0967F2440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E096A1F9A0>]}
+[0m00:50:52.006516 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-20 00:51:10.964084 | d283310c-96b7-4f56-a7e6-89967fd04181 ==============================
+[0m00:51:10.964084 [info ] [MainThread]: Running with dbt=1.4.5
+[0m00:51:10.972087 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ISLAHARATO\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m00:51:10.974091 [debug] [MainThread]: Tracking: tracking
+[0m00:51:11.112443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273705F28F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273705F2290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273705F3640>]}
+[0m00:51:12.188264 [debug] [MainThread]: Executing "git --help"
+[0m00:51:12.223818 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:51:12.225817 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:51:12.227846 [debug] [MainThread]: On debug: select 1 as id
+[0m00:51:12.228824 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:51:14.694798 [debug] [MainThread]: SQL status: SUCCESS 1 in 2 seconds
+[0m00:51:14.694798 [debug] [MainThread]: On debug: Close
+[0m00:51:14.837385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273708257B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027371352110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027371353490>]}
+[0m00:51:14.838388 [debug] [MainThread]: Flushing usage events
+[0m00:51:15.623151 [debug] [MainThread]: Connection 'debug' was properly closed.
