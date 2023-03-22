@@ -54,8 +54,9 @@ jobs:
                   user:      ${{ env.SF_USERNAME }}
                   password:  ${{ env.SF_PASSWORD }}
             EOF
+            cat ~/.dbt/profiles.yml
             dbt debug
-   
+
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Show current directory
          run: pwd
