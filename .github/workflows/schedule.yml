@@ -35,4 +35,4 @@ jobs:
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Run dbt models
          working-directory: dbt_demo/
-         run: dbt run --select models/ --profiles-dir profiles.yml
+         run: dbt run --profiles-dir profiles.yml
