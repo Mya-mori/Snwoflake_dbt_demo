@@ -13,9 +13,9 @@ on:
 
 
 jobs:
-    dbt-run:
-        name: Set up ubuntu
-        runs-on: ubuntu-latest
+  dbt-run:
+    name: Set up ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
