@@ -59,7 +59,7 @@ jobs:
             echo "pwd"
             pwd
             echo "ls"
-            ls
+            ls -a
             dbt debug
             echo "kokomade"
 
