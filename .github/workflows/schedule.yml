@@ -66,6 +66,7 @@ jobs:
             pwd
             echo "ls"
             ls -a
+            cd dbt_demo
             dbt debug
             echo "kokomade"
 
