@@ -32,7 +32,8 @@ jobs:
             python -m pip install --upgrade pip
             pip install dbt-core dbt-snowflake
             # create profile
-            DBT_TYPE_KEY      = ${{ secrets.DBT_TYPE_KEY}}
+            echo ${{ secrets.DBT_TYPE_KEY }}
+            DBT_TYPE_KEY      = ${{ secrets.DBT_TYPE_KEY }}
             SF_ACCOUNT        = ${{ secrets.SF_ACCOUNT }}
             SF_DATABASE       = ${{ secrets.SF_DATABASE }}
             SF_WAREHOUSE      = ${{ secrets.SF_WAREHOUSE }}
