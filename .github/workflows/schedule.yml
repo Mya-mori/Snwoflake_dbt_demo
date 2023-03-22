@@ -57,6 +57,7 @@ jobs:
             cat ~/.dbt/profiles.yml
             echo "imakara"
             pwd
+            ls
             dbt debug
             echo "kokomade"
 
