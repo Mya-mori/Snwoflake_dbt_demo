@@ -61,16 +61,16 @@ jobs:
                   password:  ${{ env.SF_PASSWORD }}
             EOF
             cat ~/.dbt/profiles.yml
-            ls ~/.dbt/profiles.yml
-            export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
-            echo "imakara"
-            echo "pwd"
-            pwd
-            echo "ls"
-            ls -a
-            cd dbt_demo
-            dbt debug
-            echo "kokomade"
+            # ls ~/.dbt/profiles.yml
+            # export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
+            # echo "imakara"
+            # echo "pwd"
+            # pwd
+            # echo "ls"
+            # ls -a
+            # cd dbt_demo
+            # dbt debug
+            # echo "kokomade"
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Show current directory
@@ -83,4 +83,4 @@ jobs:
        
        - name: Run dbt models
          working-directory: dbt_demo/
-         run: dbt run
+         run: dbt run --profiles-dir /home/runner/.dbt/profiles.yml
