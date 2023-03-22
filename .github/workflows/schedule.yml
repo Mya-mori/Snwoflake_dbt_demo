@@ -40,7 +40,7 @@ jobs:
             python -m pip install --upgrade pip
             pip install dbt-snowflake
             # create profile
-            DBT_TYPE_KEY      = $( echo ${ DBT_TYPE_KEY } )
+            TYPE_KEY      = $( echo ${ DBT_TYPE_KEY } )
             SF_ACCOUNT        = $( echo ${ SF_ACCOUNT } )
             SF_DATABASE       = $( echo ${ SF_DATABASE } )
             SF_WAREHOUSE      = $( echo ${ SF_WAREHOUSE } )
@@ -55,7 +55,7 @@ jobs:
                 target: dev
                 outputs:
                     dev:
-                        type:      ${!DBT_TYPE_KEY}
+                        type:      ${!TYPE_KEY}
                         account:   ${!SF_ACCOUNT}
                         database:  ${!SF_DATABASE}
                         warehouse: ${!SF_WAREHOUSE}
