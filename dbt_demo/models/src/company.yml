@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: company
+    database: workforce_data_analyticsdemo #zoom_dbt_db データソースが日次更新されているため数値確認は共有元を使用する
+    schema: public
+    tables:
+      - name: revelio_wf_dynam_demo_breakdown

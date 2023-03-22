@@ -43,3 +43,13 @@ Happy modeling!
 [0m00:51:14.837385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273708257B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027371352110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027371353490>]}
 [0m00:51:14.838388 [debug] [MainThread]: Flushing usage events
 [0m00:51:15.623151 [debug] [MainThread]: Connection 'debug' was properly closed.
+
+
+============================== 2023-03-20 04:11:49.905211 | 7cd52c39-0186-4ca2-9748-e58cb95f93b4 ==============================
+[0m04:11:49.905211 [info ] [MainThread]: Running with dbt=1.4.5
+[0m04:11:49.905211 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ISLAHARATO\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m04:11:49.911047 [debug] [MainThread]: Tracking: tracking
+[0m04:11:50.011684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEF400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEF550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEFCA0>]}
+[0m04:11:50.023987 [debug] [MainThread]: Executing "git --help"
+[0m04:11:50.047040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEF460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEFFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEE320>]}
+[0m04:11:50.049038 [debug] [MainThread]: Flushing usage events
