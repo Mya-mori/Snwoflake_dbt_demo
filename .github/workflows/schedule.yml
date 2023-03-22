@@ -45,14 +45,14 @@ jobs:
               outputs:
                 dev:
                   type:      $snowflake
-                  account:   ${!SF_SNOWFLAKE}
-                  database:  ${!SF_DATABASE}
-                  warehouse: ${!SF_WAREHOUSE}
-                  schema:    ${!SF_SCHEMA}
-                  role:      ${!DBT_ROLE_KEY}
+                  account:   ${ SF_SNOWFLAKE}
+                  database:  ${ SF_DATABASE}
+                  warehouse: ${ SF_WAREHOUSE}
+                  schema:    ${ SF_SCHEMA}
+                  role:      ${ DBT_ROLE_KEY}
                   threads:   $8
-                  user:      ${!SF_USERNAME}
-                  password:  ${!SF_PASSWORD}
+                  user:      ${ SF_USERNAME}
+                  password:  ${ SF_PASSWORD}
             EOF
             cat ~/.dbt/profiles.yml
             dbt debug
