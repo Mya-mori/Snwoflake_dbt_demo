@@ -34,5 +34,5 @@ jobs:
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Run dbt models
-         working-directory: dbt_demo
+         working-directory: dbt_demo/
          run: dbt run
