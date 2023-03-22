@@ -10,6 +10,7 @@ on:
        # run on push to development branch
        - main
 env:
+   DBT_PROFILES_DIR: ./
    SF_SNOWFLAKE: ${{ secrets.SF_ACCOUNT }}
    SF_DATABASE:  ${{ secrets.SF_DATABASE }}
    SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
@@ -35,6 +36,11 @@ jobs:
          run: |
             pip install dbt-snowflake
             python3 -m pip install --upgrade pip
+
+       - name: Show current directory_1
+         run: pwd
+       - name: list current directory_1
+         run: ls
 
        - name: set profiles
          run: |
