@@ -36,8 +36,8 @@ jobs:
             pip install dbt-snowflake
             pwd
             ls
-            mkdir ~/.dbt
-            cat << EOF > ~/.dbt/profiles.yml
+            mkdir .dbt
+            cat << EOF > .dbt/profiles.yml
             box_dbt:
               target: dev
               outputs:
