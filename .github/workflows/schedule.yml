@@ -37,6 +37,9 @@ jobs:
          run: pwd
        - name: list current directory
          run: ls
+       - name: list current directory after cd
+         working-directory: dbt_demo
+         run: ls
        
        - name: Run dbt models
          run: dbt run --profiles-dir profiles.yml
