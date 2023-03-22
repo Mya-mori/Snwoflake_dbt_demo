@@ -79,8 +79,9 @@ jobs:
          run: ls
        - name: list current directory after cd
          working-directory: dbt_demo
-         run: ls
-       
+         run: |
+          ls
+          cat profiles.yml
        - name: Run dbt models
          working-directory: dbt_demo/
          run: dbt run --profiles-dir /home/runner/.dbt/profiles.yml
