@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+  schedule:
+    - cron: '50 11 * * *'  # Run the `main` branch daily at 11:50am UTC
+  workflow_dispatch: # Allow the workflow to be triggered manually
+
+env:
+  SNOWSQL_USER: github
+  SNOWSQL_PWD: ${{ secrets.SNOWSQL_PWD }}
+  SNOWSQL_DATABASE: acme
+  SNOWSQL_SCHEMA: staging
+  SNOWSQL_WAREHOUSE: ci
+  SNOWSQL_ROLE: transformer
+  SNOWSQL_ACCOUNT: ${{ secrets.SNOWSQL_ACCOUNT }}
+  LC_ALL: C.UTF-8
+  LANG: C.UTF-8
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: pip install
+        run: pip install -r requirements.txt
+      - name: dbt debug
+        run: dbt debug --profiles-dir $PWD
+      - name: dbt deps
+        run: dbt deps --profiles-dir $PWD
+
+        # Reset the staging database by cloning production
+      - name: Reset staging database
+        run: snowsql -f scripts/reset_staging_db.sql
+
+        # Load seed files
+      - name: dbt seed
+        run: "dbt seed --full-refresh --profiles-dir $PWD"
+
+        # Build's the tables and views on the DWH's `staging` schema with dbt
+      - name: dbt run
+        run: dbt run --profiles-dir $PWD
+
+        # Test the resulting tables to identify any issues before the data lands in production
+      - name: dbt test
+        run: dbt test --profiles-dir $PWD
+
+        # Clone the staging schema into the production schema once the tests have
+        # validated the data
+      - name: Promote staging
+        run: snowsql -f scripts/promote_staging_db.sql
+        if: github.ref == 'refs/heads/main'
