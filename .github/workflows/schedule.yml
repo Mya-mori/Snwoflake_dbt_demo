@@ -62,6 +62,7 @@ jobs:
             EOF
             cat ~/.dbt/profiles.yml
             ls ~/.dbt/profiles.yml
+            export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
             echo "imakara"
             echo "pwd"
             pwd
