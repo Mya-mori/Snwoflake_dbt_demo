@@ -34,7 +34,8 @@ jobs:
        - name: Install dependencies
          run: |
             pip install dbt-snowflake
-            
+            pwd
+            ls
             mkdir ~/.dbt
             cat << EOF > ~/.dbt/profiles.yml
             box_dbt:
