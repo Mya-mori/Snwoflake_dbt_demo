@@ -33,10 +33,10 @@ jobs:
             pip install dbt-snowflake
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
-       - name: where am i ?
-         run: |
-            $echo pwd
-            $echo 
+       - name: Show current directory
+         run: pwd
+       - name: list current directory
+         run: ls
        
        - name: Run dbt models
          run: dbt run --profiles-dir profiles.yml
