@@ -3,7 +3,7 @@ name: schedule_dbt_job
 on:
    schedule:
        # run at 7AM every single day
-       # <https://crontab.guru> <-- for generating CRON expression
+       # https://crontab.guru <-- for generating CRON expression
        - cron: "0 7 * * *"
    push:
        branches:
@@ -55,7 +55,9 @@ jobs:
                   password:  ${{ env.SF_PASSWORD }}
             EOF
             cat ~/.dbt/profiles.yml
+            echo "imakara"
             dbt debug
+            echo "kokomade"
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Show current directory
