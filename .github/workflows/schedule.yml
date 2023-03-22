@@ -34,9 +34,9 @@ jobs:
        - name: Install dependencies
          run: |
             pip install dbt-snowflake
-            pwd
-            ls
-            cat << EOF > profiles.yml
+            python3 -m pip install --upgrade pip
+            mkdir ~/.dbt
+            cat << EOF > ~/.dbt/profiles.yml
             dbt_demo:
               target: dev
               outputs:
@@ -51,7 +51,7 @@ jobs:
                   user:      ${!SF_USERNAME}
                   password:  ${!SF_PASSWORD}
             EOF
-            cat profiles.yml
+            cat ~/.dbt/profiles.yml
             dbt debug
    
        # dbt related commands here - run use --target prod/dev to run for specific environments
@@ -64,5 +64,5 @@ jobs:
          run: ls
        
        - name: Run dbt models
-         working-directory: dbt_demo
-         run: dbt run --profiles-dir dbt_demo/profiles.yml
+         working-directory: dbt_demo/
+         run: dbt run
