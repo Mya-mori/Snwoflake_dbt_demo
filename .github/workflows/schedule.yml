@@ -33,15 +33,14 @@ jobs:
             pip install dbt-core dbt-snowflake
             # create profile
             echo ${{ secrets.DBT_TYPE_KEY }}
-            DBT_TYPE_KEY      = ${{ secrets.DBT_TYPE_KEY }}
-            SF_ACCOUNT        = ${{ secrets.SF_ACCOUNT }}
-            SF_DATABASE       = ${{ secrets.SF_DATABASE }}
-            SF_WAREHOUSE      = ${{ secrets.SF_WAREHOUSE }}
-            SF_SCHEMA         = ${{ secrets.SF_SCHEMA }}
-            SF_ROLE           = ${{ secrets.SF_ROLE }}
-            DBT_THREADS       = ${{ secrets.DBT_THREADS}}
-            SF_USERNAME       = ${{ secrets.SF_USERNAME }}
-            SF_PASSWORD       = ${{ secrets.SF_PASSWORD }}
+            DBT_TYPE_KEY      = echo ${{ secrets.DBT_TYPE_KEY }}
+            SF_ACCOUNT        = echo ${{ secrets.SF_ACCOUNT }}
+            SF_DATABASE       = echo ${{ secrets.SF_DATABASE }}
+            SF_WAREHOUSE      = echo ${{ secrets.SF_WAREHOUSE }}
+            SF_ROLE           = echo ${{ secrets.SF_ROLE }}
+            DBT_THREADS       = echo ${{ secrets.DBT_THREADS}}
+            SF_USERNAME       = echo ${{ secrets.SF_USERNAME }}
+            SF_PASSWORD       = echo ${{ secrets.SF_PASSWORD }}
 
             mkdir ~/.dbt
             cat << EOF > ~/.dbt/profiles.yml
