@@ -35,6 +35,7 @@ jobs:
          run: |
             pip install dbt-snowflake
             python3 -m pip install --upgrade pip
+
             mkdir ~/.dbt
             cat << EOF > ~/.dbt/profiles.yml
             dbt_demo:
