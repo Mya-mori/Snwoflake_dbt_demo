@@ -26,14 +26,14 @@ jobs:
       - name: Install dbt
         working-directory: dbt_demo/
         env:
-            DBT_TYPE_KEY : echo $( secrets.DBT_TYPE_KEY )
-            SF_ACCOUNT   : echo $( secrets.SF_ACCOUNT )
-            SF_DATABASE  : echo $( secrets.SF_DATABASE )
-            SF_WAREHOUSE : echo $( secrets.SF_WAREHOUSE )
-            SF_ROLE      : echo $( secrets.SF_ROLE )
-            DBT_THREADS  : echo $( secrets.DBT_THREADS )
-            SF_USERNAME  : echo $( secrets.SF_USERNAME )
-            SF_PASSWORD  : echo $( secrets.SF_PASSWORD )
+            DBT_TYPE_KEY : $( echo $( secrets.DBT_TYPE_KEY ))
+            SF_ACCOUNT   : $( echo $( secrets.SF_ACCOUNT ))
+            SF_DATABASE  : $( echo $( secrets.SF_DATABASE ))
+            SF_WAREHOUSE : $( echo $( secrets.SF_WAREHOUSE ))
+            SF_ROLE      : $( echo $( secrets.SF_ROLE ))
+            DBT_THREADS  : $( echo $( secrets.DBT_THREADS ))
+            SF_USERNAME  : $( echo $( secrets.SF_USERNAME ))
+            SF_PASSWORD  : $( echo $( secrets.SF_PASSWORD ))
         run: |
             python -m pip install --upgrade pip
             pip install dbt-snowflake
