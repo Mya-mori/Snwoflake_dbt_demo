@@ -35,9 +35,8 @@ jobs:
          run: |
             pip install dbt-snowflake
             pwd
-            mkdir ~/.dbt
             ls
-            cat << EOF > ~/.dbt/profiles.yml
+            cat << EOF > profiles.yml
             dbt_demo:
               target: dev
               outputs:
@@ -52,7 +51,7 @@ jobs:
                   user:      ${!SF_USERNAME}
                   password:  ${!SF_PASSWORD}
             EOF
-            cat ~/.dbt/profiles.yml
+            cat profiles.yml
             dbt debug
    
        # dbt related commands here - run use --target prod/dev to run for specific environments
