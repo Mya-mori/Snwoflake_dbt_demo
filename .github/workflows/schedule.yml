@@ -10,10 +10,13 @@ on:
        # run on push to development branch
        - main
 env:
-   DBT_PROFILES_DIR: ./
-   DBT_SNOWFLAKE_USERNAME: ${{ secrets.SF_USERNAME }}
-   DBT_SNOWFLAKE_PW: ${{ secrets.SF_PASSWORD }}
-   DBT_SNOWFLAKE_ROLE: ${{ secrets.SF_ROLE }}
+   SF_SNOWFLAKE: ${{ secrets.SF_ACCOUNT }}
+   SF_DATABASE:  ${{ secrets.SF_DATABASE }}
+   SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
+   SF_SCHEMA:    ${{ secrets.SF_SCHEMA }}
+   SF_USERNAME:  ${{ secrets.SF_USERNAME }}
+   SF_PASSWORD:  ${{ secrets.SF_PASSWORD }}
+   SF_ROLE:      ${{ secrets.SF_ROLE }}
 
 jobs:
    schedule_dbt_job:
@@ -31,7 +34,26 @@ jobs:
        - name: Install dependencies
          run: |
             pip install dbt-snowflake
-
+            
+            mkdir ~/.dbt
+            cat << EOF > ~/.dbt/profiles.yml
+            box_dbt:
+              target: dev
+              outputs:
+                dev:
+                  type:      $snowflake
+                  account:   ${!SF_SNOWFLAKE}
+                  database:  ${!SF_DATABASE}
+                  warehouse: ${!SF_WAREHOUSE}
+                  schema:    ${!SF_SCHEMA}
+                  role:      ${!DBT_ROLE_KEY}
+                  threads:   $8
+                  user:      ${!SF_USERNAME}
+                  password:  ${!SF_PASSWORD}
+            EOF
+            cat ~/.dbt/profiles.yml
+            dbt debug
+   
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Show current directory
          run: pwd
