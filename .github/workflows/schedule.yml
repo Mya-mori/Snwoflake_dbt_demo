@@ -35,7 +35,6 @@ jobs:
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: where am i ?
          run: |
-            $echo $DBT_PROFILES_DIR
             $echo pwd
        
        - name: Run dbt models
