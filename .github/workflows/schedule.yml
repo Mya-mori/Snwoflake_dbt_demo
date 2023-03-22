@@ -56,6 +56,7 @@ jobs:
             EOF
             cat ~/.dbt/profiles.yml
             echo "imakara"
+            pwd
             dbt debug
             echo "kokomade"
 
