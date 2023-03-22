@@ -26,7 +26,7 @@ jobs:
             python-version: 3.9.14
 
         - name: Install dbt
-            working-directory: snowflake_dbt_demo/dbt_demo/
+          working-directory: snowflake_dbt_demo/dbt_demo/
 
           run: |
             python -m pip install --upgrade pip
@@ -62,11 +62,11 @@ jobs:
                 dbt debug
 
         - name: Run dbt
-            working-directory: snowflake_dbt_demo/dbt_demo/
-            run: |
-                dbt run
+          working-directory: snowflake_dbt_demo/dbt_demo/
+          run: |
+            dbt run
 
         - name: Test dbt
-            working-directory: snowflake_dbt_demo/dbt_demo/
-            run: |
-                dbt test
+          working-directory: snowflake_dbt_demo/dbt_demo/
+          run: |
+            dbt test
