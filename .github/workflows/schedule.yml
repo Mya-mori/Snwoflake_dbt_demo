@@ -61,6 +61,7 @@ jobs:
                   password:  ${{ env.SF_PASSWORD }}
             EOF
             cat ~/.dbt/profiles.yml
+            ls ~/.dbt/
             echo "imakara"
             echo "pwd"
             pwd
