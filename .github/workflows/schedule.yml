@@ -36,6 +36,7 @@ jobs:
        - name: where am i ?
          run: |
             $echo pwd
+            $echo 
        
        - name: Run dbt models
          run: dbt run --profiles-dir profiles.yml
