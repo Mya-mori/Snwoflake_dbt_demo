@@ -71,6 +71,7 @@ jobs:
             EOF
             cat ~/.dbt/profiles.yml
             ls ~/.dbt/profiles.yml
+            cd dbt_demo
             # export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
             # echo "imakara"
             # echo "pwd"
@@ -79,7 +80,7 @@ jobs:
             # ls -a
             # cd dbt_demo
             dbt debug
-            # echo "kokomade"
+            echo "kokomade"
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
        - name: Show current directory
