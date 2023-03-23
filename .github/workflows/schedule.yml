@@ -90,4 +90,7 @@ jobs:
          run: ls
        - name: Run dbt models
          working-directory: dbt_demo
-         run: dbt run
+         run: |
+            export DBT_PROFILES_DIR=/home/runner/.dbt
+            dbt debug
+            dbt run
