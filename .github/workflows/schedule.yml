@@ -11,16 +11,6 @@ on:
   #      branches:
   #      # run on push to development branch
   #      - main
-env:
-  #  DBT_PROFILES_DIR: ./
-   SF_SNOWFLAKE: ${{ secrets.SF_ACCOUNT }}
-   SF_DATABASE:  ${{ secrets.SF_DATABASE }}
-   SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
-   SF_SCHEMA:    ${{ secrets.SF_SCHEMA }}
-   SF_USERNAME:  ${{ secrets.SF_USERNAME }}
-   SF_PASSWORD:  ${{ secrets.SF_PASSWORD }}
-   SF_ROLE:      ${{ secrets.SF_ROLE }}
-
 jobs:
    schedule_dbt_job:
        name: schedule_dbt_job
@@ -56,15 +46,6 @@ jobs:
                   threads:   8
                   user:      ${{ secrets.SF_USERNAME }}
                   password:  ${{ secrets.SF_PASSWORD }}
-                  # type: snowflake
-                  # account: insightlabpartner.ap-northeast-1.aws
-                  # database: TR_DAISUKE_HARATO
-                  # warehouse: DEMO_WH
-                  # schema: dbt_demo
-                  # role: isl_training
-                  # threads: 8
-                  # user: DAISUKE_HARATO
-                  # password: Daikon0313
             EOF
             cat ~/.dbt/profiles.yml
 
