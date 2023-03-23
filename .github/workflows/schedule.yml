@@ -80,7 +80,7 @@ jobs:
             ls -a
             echo "pwd"
             pwd
-            export DBT_PROFILES_DIR=/home/runner/.dbt
+            # export DBT_PROFILES_DIR=/home/runner/.dbt
             echo "dbt debug"
             dbt debug
             echo "kokomade"
@@ -93,6 +93,6 @@ jobs:
        - name: Run dbt models
          working-directory: dbt_demo
          run: |
-            export DBT_PROFILES_DIR=/home/runner/.dbt
+            # export DBT_PROFILES_DIR=/home/runner/.dbt
             dbt debug
             dbt run
