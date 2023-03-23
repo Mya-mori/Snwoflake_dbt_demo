@@ -78,7 +78,7 @@ jobs:
             ls -a
             echo "pwd"
             pwd
-            export DBT_PROFILES_DIR=/home/runner/.dbt/profiles.yml
+            export DBT_PROFILES_DIR=/home/runner/.dbt
             echo "dbt debug"
             dbt debug
             echo "kokomade"
