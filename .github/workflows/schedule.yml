@@ -70,6 +70,7 @@ jobs:
                   password: Daikon0313
             EOF
             cat ~/.dbt/profiles.yml
+            dbt debug --config-dir
             echo "profiles.yml is here"
             ls ~/.dbt/profiles.yml
             echo "ls in target directory"
@@ -77,7 +78,7 @@ jobs:
             ls -a
             echo "pwd"
             pwd
-
+            export DBT_PROFILES_DIR=/home/runner/.dbt/profiles.yml
             echo "dbt debug"
             dbt debug
             echo "kokomade"
