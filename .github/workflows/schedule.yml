@@ -59,18 +59,18 @@ jobs:
                   # threads:   $8
                   # user:      ${{ env.SF_USERNAME }}
                   # password:  ${{ env.SF_PASSWORD }}
-                  type: $snowflake
-                  account: $insightlabpartner.ap-northeast-1.aws
-                  database: $TR_DAISUKE_HARATO
-                  warehouse: $DEMO_WH
-                  schema: $dbt_demo
-                  role: $isl_training
-                  threads: $8
-                  user: $DAISUKE_HARATO
-                  password: $Daikon0313
+                  type: snowflake
+                  account: insightlabpartner.ap-northeast-1.aws
+                  database: TR_DAISUKE_HARATO
+                  warehouse: DEMO_WH
+                  schema: dbt_demo
+                  role: isl_training
+                  threads: 8
+                  user: DAISUKE_HARATO
+                  password: Daikon0313
             EOF
             cat ~/.dbt/profiles.yml
-            # ls ~/.dbt/profiles.yml
+            ls ~/.dbt/profiles.yml
             # export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
             # echo "imakara"
             # echo "pwd"
@@ -78,7 +78,7 @@ jobs:
             # echo "ls"
             # ls -a
             # cd dbt_demo
-            # dbt debug
+            dbt debug
             # echo "kokomade"
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
