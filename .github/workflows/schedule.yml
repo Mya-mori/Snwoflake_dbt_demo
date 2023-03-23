@@ -95,4 +95,4 @@ jobs:
           cat profiles.yml
        - name: Run dbt models
          working-directory: dbt_demo/
-         run: dbt run --profiles-dir /home/runner/.dbt/profiles.yml
+         run: dbt run
