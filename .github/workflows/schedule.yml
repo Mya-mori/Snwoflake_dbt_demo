@@ -39,11 +39,6 @@ jobs:
             pip install dbt-snowflake
             python3 -m pip install --upgrade pip
 
-       - name: Show current directory_1
-         run: pwd
-       - name: list current directory_1
-         run: ls
-
        - name: set profiles
          run: |
             mkdir ~/.dbt
@@ -53,11 +48,11 @@ jobs:
               outputs:
                 dev:
                   type:      snowflake
-                  account:   ${{ secrets.SF_SNOWFLAKE }}
+                  account:   ${{ secrets.SF_ACCOUNT }}
                   database:  ${{ secrets.SF_DATABASE }}
                   warehouse: ${{ secrets.SF_WAREHOUSE }}
                   schema:    ${{ secrets.SF_SCHEMA }}
-                  role:      ${{ secrets.DBT_ROLE_KEY }}
+                  role:      ${{ secrets.SF_ROLE }}
                   threads:   8
                   user:      ${{ secrets.SF_USERNAME }}
                   password:  ${{ secrets.SF_PASSWORD }}
@@ -74,10 +69,6 @@ jobs:
             cat ~/.dbt/profiles.yml
 
        # dbt related commands here - run use --target prod/dev to run for specific environments
-       - name: Show current directory
-         run: pwd
-       - name: list current directory
-         run: ls
        - name: Run dbt models
          working-directory: dbt_demo
          run: |
