@@ -52,13 +52,13 @@ jobs:
               target: dev
               outputs:
                 dev:
-                  type:      $snowflake
+                  type:      snowflake
                   account:   ${{ secrets.SF_SNOWFLAKE }}
                   database:  ${{ secrets.SF_DATABASE }}
                   warehouse: ${{ secrets.SF_WAREHOUSE }}
                   schema:    ${{ secrets.SF_SCHEMA }}
                   role:      ${{ secrets.DBT_ROLE_KEY }}
-                  threads:   $8
+                  threads:   8
                   user:      ${{ secrets.SF_USERNAME }}
                   password:  ${{ secrets.SF_PASSWORD }}
                   # type: snowflake
