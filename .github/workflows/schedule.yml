@@ -1,6 +1,8 @@
 name: schedule_dbt_job
 
 on:
+   workflow_dispatch:
+  
    schedule:
        # run at 7AM every single day
        # https://crontab.guru <-- for generating CRON expression
