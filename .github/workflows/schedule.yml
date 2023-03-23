@@ -5,10 +5,10 @@ on:
        # run at 7AM every single day
        # https://crontab.guru <-- for generating CRON expression
        - cron: "0 7 * * *"
-   push:
-       branches:
-       # run on push to development branch
-       - main
+  #  push:
+  #      branches:
+  #      # run on push to development branch
+  #      - main
 env:
   #  DBT_PROFILES_DIR: ./
    SF_SNOWFLAKE: ${{ secrets.SF_ACCOUNT }}
