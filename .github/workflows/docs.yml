@@ -1,0 +1,55 @@
+name: docs
+
+on:
+   workflow_dispatch:
+
+  #  push:
+  #      branches:
+  #      # run on push to development branch
+  #      - main
+
+
+jobs:
+   schedule_dbt_job:
+       name: setup ubuntu
+       runs-on: ubuntu-latest
+
+       steps:
+       - name: Check out
+         uses: actions/checkout@master
+
+       - uses: actions/setup-python@v1
+         with:
+           python-version: "3.8.x"
+
+       - name: Install dependencies
+         run: |
+            pip install dbt-snowflake
+            python3 -m pip install --upgrade pip
+
+       - name: set profiles
+         run: |
+            mkdir ~/.dbt
+            cat << EOF > ~/.dbt/profiles.yml
+            dbt_demo:
+              target: dev
+              outputs:
+                dev:
+                  type:      snowflake
+                  account:   ${{ secrets.SF_ACCOUNT }}
+                  database:  ${{ secrets.SF_DATABASE }}
+                  warehouse: ${{ secrets.SF_WAREHOUSE }}
+                  schema:    ${{ secrets.SF_SCHEMA }}
+                  role:      ${{ secrets.SF_ROLE }}
+                  threads:   8
+                  user:      ${{ secrets.SF_USERNAME }}
+                  password:  ${{ secrets.SF_PASSWORD }}
+            EOF
+            cat ~/.dbt/profiles.yml
+
+       - name: create dbt docs
+         working-directory: dbt_demo
+         run: |
+            dbt debug
+            dbt docs generate
+            ls target
