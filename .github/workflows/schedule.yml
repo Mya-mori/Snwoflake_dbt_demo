@@ -70,15 +70,15 @@ jobs:
                   password: Daikon0313
             EOF
             cat ~/.dbt/profiles.yml
+            echo "profiles.yml is here"
             ls ~/.dbt/profiles.yml
+            echo "ls in target directory"
             cd dbt_demo
-            # export DBT_PROFILES_DIR = /home/runner/.dbt/profiles.yml
-            # echo "imakara"
-            # echo "pwd"
-            # pwd
-            # echo "ls"
-            # ls -a
-            # cd dbt_demo
+            ls -a
+            echo "pwd"
+            pwd
+
+            echo "dbt debug"
             dbt debug
             echo "kokomade"
 
