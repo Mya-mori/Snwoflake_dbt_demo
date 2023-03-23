@@ -88,11 +88,6 @@ jobs:
          run: pwd
        - name: list current directory
          run: ls
-       - name: list current directory after cd
-         working-directory: dbt_demo
-         run: |
-          ls
-          cat profiles.yml
        - name: Run dbt models
-         working-directory: dbt_demo/
+         working-directory: dbt_demo
          run: dbt run
