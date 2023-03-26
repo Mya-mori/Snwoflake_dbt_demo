@@ -53,3 +53,13 @@ Happy modeling!
 [0m04:11:50.023987 [debug] [MainThread]: Executing "git --help"
 [0m04:11:50.047040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEF460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEFFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E62AEE320>]}
 [0m04:11:50.049038 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-24 04:31:16.038332 | 01786e94-3b9a-412d-9381-472deeb97e44 ==============================
+[0m04:31:16.038332 [info ] [MainThread]: Running with dbt=1.4.5
+[0m04:31:16.047634 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ISLAHARATO\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m04:31:16.047634 [debug] [MainThread]: Tracking: tracking
+[0m04:31:16.156336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD21FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD20A00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD20760>]}
+[0m04:31:16.156336 [debug] [MainThread]: Executing "git --help"
+[0m04:31:16.184315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD22950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD22770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F5BCD22530>]}
+[0m04:31:16.186313 [debug] [MainThread]: Flushing usage events

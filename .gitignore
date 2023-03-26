@@ -1,2 +1,4 @@
 .venv
 logs/
+logs/dbt.log
+dbt_demo/edr_target/

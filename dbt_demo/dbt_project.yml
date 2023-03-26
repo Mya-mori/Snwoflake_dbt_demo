@@ -37,3 +37,5 @@ models:
       core:
         +materialized: table
         +schema: core
+  elementary:
+    +schema: "elementary"
