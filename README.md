@@ -2,5 +2,8 @@
 
 # Snwoflake_dbt_demo
 
+# 導入済みパッケージ
+- elementary_output
+
 # データ
 - WORKFORCE DATA ANALYTICS
