@@ -54,4 +54,5 @@ jobs:
          working-directory: dbt_demo
          run: |
             dbt debug
+            dbt deps
             dbt run
