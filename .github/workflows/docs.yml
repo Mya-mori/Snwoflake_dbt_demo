@@ -27,34 +27,34 @@ jobs:
             pip install dbt-snowflake
             python3 -m pip install --upgrade pip
 
-       - name: set profiles
-         run: |
-            mkdir ~/.dbt
-            cat << EOF > ~/.dbt/profiles.yml
-            dbt_demo:
-              target: dev
-              outputs:
-                dev:
-                  type:      snowflake
-                  account:   ${{ secrets.SF_ACCOUNT }}
-                  database:  ${{ secrets.SF_DATABASE }}
-                  warehouse: ${{ secrets.SF_WAREHOUSE }}
-                  schema:    ${{ secrets.SF_SCHEMA }}
-                  role:      ${{ secrets.SF_ROLE }}
-                  threads:   8
-                  user:      ${{ secrets.SF_USERNAME }}
-                  password:  ${{ secrets.SF_PASSWORD }}
-            EOF
-            cat ~/.dbt/profiles.yml
+      #  - name: set profiles
+      #    run: |
+      #       mkdir ~/.dbt
+      #       cat << EOF > ~/.dbt/profiles.yml
+      #       dbt_demo:
+      #         target: dev
+      #         outputs:
+      #           dev:
+      #             type:      snowflake
+      #             account:   ${{ secrets.SF_ACCOUNT }}
+      #             database:  ${{ secrets.SF_DATABASE }}
+      #             warehouse: ${{ secrets.SF_WAREHOUSE }}
+      #             schema:    ${{ secrets.SF_SCHEMA }}
+      #             role:      ${{ secrets.SF_ROLE }}
+      #             threads:   8
+      #             user:      ${{ secrets.SF_USERNAME }}
+      #             password:  ${{ secrets.SF_PASSWORD }}
+      #       EOF
+      #       cat ~/.dbt/profiles.yml
 
-       - name: create dbt docs
-         working-directory: dbt_demo
-         run: |
-            dbt debug
-            dbt docs generate
+      #  - name: create dbt docs
+      #    working-directory: dbt_demo
+      #    run: |
+      #       dbt debug
+      #       dbt docs generate
 
-       - name: Build and deploy
-         working-directory: dbt_demo/target
-         uses: peaceiris/actions-gh-pages@v3
-         with:
-           github_token: ${{ secrets.DBT_DOCS_TOKEN }}
+      #  - name: Build and deploy
+      #    working-directory: dbt_demo/target
+      #    uses: peaceiris/actions-gh-pages@v3
+      #    with:
+      #      github_token: ${{ secrets.DBT_DOCS_TOKEN }}
